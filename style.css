@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* ---------- BODY ---------- */
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ---------- CONTAINER ---------- */
+.container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    padding: 35px;
+    width: 500px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+/* ---------- TITLE ---------- */
+h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 25px;
+    opacity: 0.8;
+}
+
+/* ---------- INPUT SECTION ---------- */
+.input-section {
+    display: grid;
+    grid-template-columns: 1fr 150px auto;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.input-section input[type="text"],
+.input-section input[type="date"] {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+/* ---------- BUTTON ---------- */
+button {
+    padding: 12px 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: white;
+    color: #333;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* ---------- SEARCH ---------- */
+.search-section {
+    margin-bottom: 15px;
+}
+
+.search-section input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+/* ---------- FILTER BUTTONS ---------- */
+.filter {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.filter button {
+    flex: 1;
+    margin: 0 5px;
+}
+
+/* ---------- PROGRESS SECTION ---------- */
+.progress-section {
+    margin-bottom: 20px;
+}
+
+.progress-info {
+    font-size: 13px;
+    margin-bottom: 6px;
+    opacity: 0.9;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#progressFill {
+    height: 100%;
+    width: 0%;
+    background: #4CAF50;
+    border-radius: 10px;
+    transition: width 0.4s ease-in-out;
+}
+
+/* ---------- TASK LIST ---------- */
+ul {
+    list-style: none;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+li {
+    background: rgba(255, 255, 255, 0.25);
+    margin-bottom: 10px;
+    padding: 12px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s;
+}
+
+li:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* ---------- TASK LEFT ---------- */
+.task-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* ---------- TOGGLE SWITCH ---------- */
+.toggle {
+    position: relative;
+    width: 40px;
+    height: 20px;
+}
+
+.toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #ccc;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.slider:before {
+    content: "";
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background: white;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.toggle input:checked + .slider {
+    background: #4CAF50;
+}
+
+.toggle input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+/* ---------- DELETE BUTTON ---------- */
+.delete-btn {
+    background: crimson;
+    color: white;
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-size: 12px;
+}
+
+/* ---------- COMPLETED TASK ---------- */
+.completed .task-text {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+/* ---------- DUE DATE ---------- */
+.due-date {
+    font-size: 12px;
+    opacity: 0.8;
+    margin-left: 8px;
+}
+
+/* ---------- OVERDUE & TODAY ---------- */
+.overdue {
+    background: rgba(255, 0, 0, 0.25) !important;
+}
+
+.today {
+    background: rgba(255, 165, 0, 0.25) !important;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+        padding: 25px;
+    }
+
+    .input-section {
+        grid-template-columns: 1fr;
+    }
+
+    .input-section button {
+        width: 100%;
+    }
+}
